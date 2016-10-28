@@ -1,14 +1,20 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/App.jsx',
+  entry: './src/Dashboard.jsx',
   output: {
     path: __dirname,
-    filename: './build/webpack-bundle.js',
+    filename: 'webpack-bundle.js'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'client/index.html'),
+      appMountId: 'content',
+      title: 'Hello',
+    })
   ],
   module: {
     loaders: [
