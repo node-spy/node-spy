@@ -1,18 +1,16 @@
 const express = require('express');
 const app = express();
+const main = require('./mainController');
+const nodeSpy = require('../lib/node-spy');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(nodeSpy.log);
 
-app.get('/', (req, res) => {
-  res.header('content-type', 'text/html');
-  res.end();
-});
-
-app.post('/dunno', (req, res) => {
-  res.header('content-type', 'application/json');
-  res.end(JSON.stringify(req.body));
-});
+app.get('/', main.hello, main.goodbye);
+app.get('/another', main.hello);
 
 app.listen(3000, (err) => {
   if (err) console.error(err);
