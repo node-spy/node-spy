@@ -11,4 +11,4 @@ const ReqView = (props) => {
   )
 };
 
-export default Book;
+export default ReqView;

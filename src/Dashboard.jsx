@@ -3,7 +3,6 @@ import {render} from 'react-dom'
 import ReqView from './ReqView.jsx';
 import ResView from './ResView.jsx';
 import RouteView from './RouteView.jsx';
-import nodeSpy from '../lib/node-spy';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -25,6 +24,7 @@ class Dashboard extends Component {
 
       return (
             <div>
+              <div>Hello World</div>
 				<RouteView />
 				<ReqView />
 				<ResView />
@@ -34,4 +34,4 @@ class Dashboard extends Component {
 
 }
 
-export default App;
+render(<Dashboard />, document.getElementById('content'));
