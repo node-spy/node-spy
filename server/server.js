@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(nodeSpy.log);
+app.use(nodeSpy.logExt);
 
 app.get('/', main.hello, main.goodbye);
 app.get('/another', main.hello);
