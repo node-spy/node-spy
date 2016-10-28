@@ -7,7 +7,8 @@
     "start": "nodemon",
     "build": "webpack",
     "dev": "webpack-dev-server --hot --inline --progress --colors --watch",
-    "test": "mocha test/server-test.js"
+    "test": "mocha test/server-test.js",
+    "testr": "mocha test/react-test.js"
   },
   "repository": {
     "type": "git",
