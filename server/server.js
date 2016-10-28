@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
-const main = require('./mainController');
-const nodeSpy = require('../lib/node-spy');
+const logger = express.logger();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
+
+const main = require('./mainController');
+const nodeSpy = require('../lib/node-spy');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(nodeSpy.log);
 
-app.get('/', main.hello, main.goodbye);
+app.get('/', main.hello, logger, main.goodbye);
 app.get('/another', main.hello);
 
 app.listen(3000, (err) => {
