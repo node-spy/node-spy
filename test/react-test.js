@@ -1,6 +1,7 @@
 // React testing powered by Enzyme and Chai
 
 const React = require('react');
+const enzyme = require('enzyme');
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 
