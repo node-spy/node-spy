@@ -1,19 +1,20 @@
+'use strict';
+
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
-const events = require('events');
 
 const main = require('./mainController');
 const nodeSpy = require('../lib/node-spy');
 
+const app = express();
+
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(nodeSpy.log);
 
 app.get('/', main.hello, main.goodbye);
-app.get('/another', main.hello);
+app.post('/another', nodeSpy.log, main.user, nodeSpy.log, main.hello, nodeSpy.log, main.goodbye, nodeSpy.reveal);
+
 
 app.listen(3000, (err) => {
   if (err) console.error(err);

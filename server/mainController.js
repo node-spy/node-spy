@@ -7,6 +7,13 @@ module.exports = {
 
   goodbye: (req, res, next) => {
     console.log('goodbye');
-    res.end();
+    next();
+  },
+
+  user: (req, res, next) => {
+    let user = req.body;
+    console.log(user);
+    next();
   }
+
 };
