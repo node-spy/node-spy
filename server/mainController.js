@@ -1,13 +1,19 @@
 module.exports = {
   
   hello: (req, res, next) => {
-    req.something = 'x';
-    res.write('hello');
+    console.log('hello');
     next();
   },
 
   goodbye: (req, res, next) => {
-    res.write('goodbye');
-    res.end();
+    console.log('goodbye');
+    next();
+  },
+
+  user: (req, res, next) => {
+    let user = req.body;
+    console.log(user);
+    next();
   }
+
 };

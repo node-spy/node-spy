@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "nodemon",
-    "build": "webpack -w",
+    "build": "webpack",
     "dev": "webpack-dev-server --hot --inline --progress --colors --watch",
     "test": "mocha test/server-test.js",
     "testr": "mocha test/react-test.js"
@@ -23,6 +23,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
+    "events": "^1.1.1",
     "express": "^4.14.0",
     "nodemon": "^1.11.0",
     "react": "^15.3.2",
@@ -42,6 +43,7 @@
     "enzyme": "^2.5.1",
     "html-webpack-plugin": "^2.24.0",
     "mocha": "^3.1.2",
+    "morgan": "^1.7.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
